@@ -1,0 +1,16 @@
+First step:
+    - Setting up Spring/Spring boot 
+        - https://start.spring.io/
+        - Selection:
+            - Java
+            - Maven as I am a beginner
+                - Pick Maven if you’re just starting out or following most online tutorials.
+                - Pick Gradle if you’re already comfortable with build tools or want faster builds in large project
+            - Spring Version 3.5.4 the latest
+            - Group: com.tonny.chess as it is reversed
+            - Project name: backend-chess
+            - Description: Backend for chess game
+            - Java 17 (chosen) or latest as Spring requires the 17+
+            - Packaging jar and the rest leave it as it is.
+        - dependencies:
+            - Web Spring

@@ -1,0 +1,101 @@
+
+
+## ✅ Chess Game Project Roadmap (React + Spring Boot)
+
+---
+
+### 🧩 PHASE 1 – Project Setup
+
+**🔹 Goal:** Get a working fullstack skeleton (React frontend + Spring Boot backend)
+
+#### ✅ Checkpoints:
+
+1. Set up a **Spring Boot app**
+
+   * Create with Spring Initializr
+   * Add dependencies: `Spring Web`, `Spring DevTools`, `Lombok`, `Spring Boot Test`
+   * Set up REST controller: `GET /ping → "pong"`
+2. Set up **React frontend**
+
+   * Scaffold with Vite or Create React App
+   * Create simple page: `fetch('/ping') → display response`
+
+✔️ **Checkpoint 1 Complete:** You have fullstack communication working (`React → Spring Boot → React`).
+
+---
+
+### ♟ PHASE 2 – Chessboard UI
+
+**🔹 Goal:** Build the chessboard and piece interaction in the frontend.
+
+#### ✅ Checkpoints:
+
+1. Add a chessboard UI library (suggested: [`chessboardjsx`](https://github.com/willb335/chessboardjsx) or make your own board with HTML/CSS)
+2. Track board state in React using `chess.js` library
+3. Enable dragging/dropping pieces and updating local state
+
+✔️ **Checkpoint 2 Complete:** You can play chess on the frontend (no backend logic yet).
+
+---
+
+### ⚙️ PHASE 3 – Move Logic (Backend)
+
+**🔹 Goal:** Move validation and game state controlled by backend (Spring Boot)
+
+#### ✅ Checkpoints:
+
+1. Create a `Game` Java class that holds:
+
+   * Current board state (e.g., FEN or 2D array)
+   * Whose turn it is
+   * Game ID
+2. Implement REST endpoints:
+
+   * `POST /game` → start new game, return ID
+   * `POST /game/{id}/move` → validate + apply move
+   * `GET /game/{id}` → get current board state
+
+> 💡 For move validation, either:
+>
+> * Use Java chess logic library (e.g. [`Chesspresso`](https://github.com/smrtsystems/chesspresso) or [`Chess4j`](https://github.com/jsilva-pt/chess4j)), **or**
+> * Let the frontend validate moves with `chess.js` (less secure but easier)
+
+✔️ **Checkpoint 3 Complete:** Your backend now controls the game logic and handles moves.
+
+---
+
+### 🧪 PHASE 4 – Testing & Polishing
+
+**🔹 Goal:** Make sure things work and are bug-free.
+
+#### ✅ Checkpoints:
+
+1. Add unit tests for move logic
+2. Ensure illegal moves are rejected
+3. Handle edge cases (checkmate, stalemate, promotion, castling)
+4. Add resign and restart functionality
+
+✔️ **Checkpoint 4 Complete:** Fully functional chess engine + UI.
+
+---
+
+### 🚀 PHASE 5 – Advanced Features (Optional)
+
+**🔹 Goal:** Add cool extras that make it impressive.
+
+#### 🧠 Ideas:
+
+* Multiplayer matchmaking (Spring WebSocket + STOMP)
+* Login/authentication (Spring Security + JWT)
+* Persistent games with PostgreSQL (Spring Data JPA)
+* AI opponent (connect to Stockfish or write your own)
+* Deploy to AWS using Elastic Beanstalk or EC2
+
+### 📥 Resources
+
+* ♟ [`chess.js`](https://github.com/jhlywa/chess.js) (move logic on frontend, easy to start)
+* 🧱 [`chessboardjsx`](https://github.com/willb335/chessboardjsx) (React board UI)
+* ☁️ [Spring Initializr](https://start.spring.io/)
+* 🐳 Dockerize it later to run anywhere
+
+---
