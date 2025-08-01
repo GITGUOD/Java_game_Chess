@@ -14,3 +14,7 @@ First step:
             - Packaging jar and the rest leave it as it is.
         - dependencies:
             - Web Spring
+        - För att köra -> cd backend och skriv detta commando:
+            - ./mvnw spring-boot:run
+
+    - Set up React
