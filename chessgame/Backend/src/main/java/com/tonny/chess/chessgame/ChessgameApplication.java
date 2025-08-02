@@ -14,7 +14,7 @@ public class ChessgameApplication {
 		System.out.println("Hi");
 	}
 
-	@GetMapping("/hello")
+	@GetMapping("/")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
       return String.format("Hello %s!", name);
     }
