@@ -16,5 +16,8 @@ First step:
             - Web Spring
         - För att köra -> cd backend och skriv detta commando:
             - ./mvnw spring-boot:run
+    Följt en yt tutorial
+        - https://www.youtube.com/watch?v=gJrjgg1KVL4&t=1316s
+        
 
     - Set up React
