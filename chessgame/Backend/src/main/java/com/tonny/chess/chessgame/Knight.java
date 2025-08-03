@@ -1,25 +1,7 @@
-public class Knight {
-    private String color;
-    private String position;
+public class Knight extends ChessPiece {
 
     public Knight(String color, String position) {
-        this.color = color;
-        this.position = position;
-    }
-
-    @Override
-    public String getColor() {
-        return color;
-    }
-
-    @Override
-    public String getPosition() {
-        return position;
-    }
-
-    @Override
-    public void setPosition(String position) {
-        this.position = position;
+        super(color, position);
     }
 
     @Override
