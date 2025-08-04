@@ -1,8 +1,8 @@
 public abstract ChessPiece implements Piece {
     private String color;
-    private String position;
+    private Position position;
 
-    public ChessPiece(String color, String position) {
+    public ChessPiece(String color, Position position) {
         this.color = color;
         this.position = position;
     }
@@ -13,12 +13,12 @@ public abstract ChessPiece implements Piece {
     }
 
     @Override
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
     @Override
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
