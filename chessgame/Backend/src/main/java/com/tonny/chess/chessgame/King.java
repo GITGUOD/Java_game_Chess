@@ -1,6 +1,6 @@
 public class King extends ChessPiece {
 
-    public King(String color, String position) {
+    public King(String color, Position position) {
         super(color, position);
     }
 

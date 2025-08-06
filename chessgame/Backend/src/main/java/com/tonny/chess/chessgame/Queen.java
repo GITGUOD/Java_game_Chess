@@ -1,6 +1,6 @@
 public class Queen extends ChessPiece {
 
-    public Queen(String color, String position) {
+    public Queen(String color, Position position) {
         super(color, position);
     }
 

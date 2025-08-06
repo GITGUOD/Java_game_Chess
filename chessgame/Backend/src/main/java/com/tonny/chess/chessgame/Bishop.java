@@ -1,6 +1,6 @@
 public class Bishop extends ChessPiece {
 
-    public Bishop(String color, String position) {
+    public Bishop(String color, Position position) {
         super(color, position);
     }
 

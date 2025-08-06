@@ -7,6 +7,12 @@ public class Position {
         this.col = col;
     }
 
+    public String getPosition() {
+        // Returns a string representation of the position, e.g., "A1", "H8"
+        char column = (char) ('A' + col);
+        return column + String.valueOf(row + 1); // Rows are 1-indexed in chess notation
+    }
+
     // getters, equals, hashCode
     @Override
     public boolean equals(Object o) {
