@@ -10,6 +10,14 @@ public class Pawn extends ChessPiece {
         // Logic to calculate valid moves for a pawn
         // Pawns can move forward one square, or two squares from their starting position
         // Add logic to check for obstacles and board boundaries
+
+        int direction = 0;
+        if(this.color.equals("WHITE")) {
+            direction = 1;
+        } else {
+            direction = -1;
+        }
+        
         return validMoves;
     }
 
