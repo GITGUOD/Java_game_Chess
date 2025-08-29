@@ -23,19 +23,31 @@ public class Pawn extends ChessPiece {
 
     public boolean isFirstMove() {
         // Logic to determine if this is the pawn's first move
-        if (this.position.getRow() == 1 && this.position.getCol() == 0) {
-            return true;
+
+        if(this.color.equals("WHITE")) {
+            if(this.position.getRow() == 1) {
+                return true;
+            }
         } else {
-            return false;
+            if(this.position.getRow() == 6) {
+                return true;
+            }
         }
+        return false;
     }
     
     public boolean canPromote() {
         // Logic to determine if the pawn can be promoted
-        return this.position.getRow() == 7; // Pawns can be promoted when they reach the last row
+    
+        if(this.color.equals("WHITE")) {
+            return this.position.getRow() == 7; // Pawns can be promoted when they reach the last row
+        } else {
+            return this.position.getRow() == 0; // Pawns can be promoted when they reach the last row
+
+        }
     }
 
-    public void promote(String newPieceType) {
+    public Piece promote(String newPieceType) {
         // Logic to promote the pawn to a new piece type (e.g., Queen, Rook, Bishop, Knight)
         // Implement actual promotion logic here
         if (canPromote()) {
@@ -43,19 +55,20 @@ public class Pawn extends ChessPiece {
                 case "queen":
                     // Replace with Queen piece
                     System.out.println("Pawn promoted to Queen");
-                    break;
+                    return new Queen(this.color, this.position);
                 case "rook":
                     // Replace with Rook piece
                     System.out.println("Pawn promoted to Rook");
-                    break;
+                    return new Rook(this.color, this.position);
                 case "bishop":
                     // Replace with Bishop piece
                     System.out.println("Pawn promoted to Bishop");
-                    break;
+                    return new Bishop(this.color, this.position);
                 case "knight":
                     // Replace with Knight piece
                     System.out.println("Pawn promoted to Knight");
-                    break;
+                    return new Knight(this.color, this.position);
+                    
                 default:
                     throw new IllegalArgumentException("Invalid piece type for promotion");
             }
@@ -69,7 +82,11 @@ public class Pawn extends ChessPiece {
         // Logic to calculate the new position based on the current position and direction
         // This is a placeholder implementation
 
-        this.position.getPosition().setRow(getPosition().getRow() + 1);
+        if(this.color.equals("WHITE")) {
+            this.position.getPosition().setRow(getPosition().getRow() + 1);
+        } else {
+            this.position.getPosition().setRow(getPosition().getRow() - 1);
+        }
         System.out.print(this.position.getPosition().setCol(getPosition().getCol()));
     }
 
