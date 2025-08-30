@@ -11,6 +11,6 @@ public interface Piece {
     void setPosition(String position);
 
     // Get all possible valid moves for this piece from its current position
-    List<String> getValidMoves(Board board);
+    List<Position> getValidMoves(Board board);
 
 }

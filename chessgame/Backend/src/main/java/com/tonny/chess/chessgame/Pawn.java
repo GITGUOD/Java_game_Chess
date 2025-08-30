@@ -5,8 +5,8 @@ public class Pawn extends ChessPiece {
     }
 
     @Override
-    public List<String> getValidMoves(Board board) {
-        List<String> validMoves = new ArrayList<>();
+    public List<Position> getValidMoves(Board board) {
+        List<Position> validMoves = new ArrayList<>();
         // Logic to calculate valid moves for a pawn
         // Pawns can move forward one square, or two squares from their starting position
         // Add logic to check for obstacles and board boundaries
@@ -17,6 +17,20 @@ public class Pawn extends ChessPiece {
         } else {
             direction = -1;
         }
+
+        //Gå framåt ett steg
+
+        Position forward = new Position(this.position().getRow() + direction, this.position().getCol());
+
+        //Gå framåt 2 steg vid första rörelsen
+
+        Position firstForward = new Position(this.position().getRow() + direction * 2, this.position().getCol());
+        if(board.isValidMove() && board.getPieceAt(forward) == null && !isFirstMove()) {
+            validMoves.add(forward);
+        } else if(isFirstMove() &&board.isValidMove() && board.getPieceAt(firstForward) == null) {
+            validMoves.add(firstForward);
+        }
+
         
         return validMoves;
     }
@@ -83,11 +97,10 @@ public class Pawn extends ChessPiece {
         // This is a placeholder implementation
 
         if(this.color.equals("WHITE")) {
-            this.position.getPosition().setRow(getPosition().getRow() + 1);
+            this.position.setRow(getPosition().getRow() + 1);
         } else {
-            this.position.getPosition().setRow(getPosition().getRow() - 1);
+            this.position.setRow(getPosition().getRow() - 1);
         }
-        System.out.print(this.position.getPosition().setCol(getPosition().getCol()));
     }
 
 
